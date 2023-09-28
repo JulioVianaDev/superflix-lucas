@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import "./Form.css";
+import { FormProps } from '../interfaces/formProps';
 
-interface FormProps {
-  Editar: (id: string | null, title: string, desc: string, url: string) => void;
-  onCreateVideo: (title: string, desc: string, url: string) => void;
-  FecharModal: () => void;
-}
+
 
 function Form(props: FormProps) {
   const [title, setTitle] = useState<string>("");
@@ -33,7 +30,7 @@ function Form(props: FormProps) {
   const handleCreateVideo = () => {
     if (editMode) {
       let id = localStorage.getItem("id");
-      props.Editar(id, title, desc, url);
+      // props.Editar(id, title, desc, url);
       setTitle("");
       setDesc("");
       setUrl("");

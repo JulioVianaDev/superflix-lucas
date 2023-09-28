@@ -1,13 +1,10 @@
 import React from 'react';
 import "./Modal.css";
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { ModalProps } from '../interfaces/modalProps';
 import Form from './Form';
 
-interface ModalProps {
-  fecharOModal: () => void;
-  EditarVideo: (id: string | null, title: string, desc: string, url: string) => void;
-  onCreateVideo: (title: string, desc: string, url: string) => void;
-}
+
 
 function Modal(props: ModalProps) {
   return (

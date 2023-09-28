@@ -49,14 +49,15 @@ function Videos() {
   return (
     <div>
        <h1>Videos inscritos</h1>
-       <AddNewButton abrirOModal={showModal} />
+       <AddNewButton abrirOModal={mudarModal} />
       {
         showModal ? <Modal EditarVideo={ editVideo } onCreateVideo={createVideo} fecharOModal={mudarModal} />
        : null
       }
       <div className='videos-div'>      
         {videos.map((v) => (
-            <Video deleteVideo={DELETED_VIDEO} abrirOModal={mudarModal} key={v._id} {...v} />
+          //  deleteVideo={DELETED_VIDEO} abrirOModal={mudarModal}
+            <Video key={v._id} {...v} />
           ))}
       </div>
     </div>        
